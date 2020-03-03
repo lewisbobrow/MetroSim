@@ -1,0 +1,63 @@
+/**********************************************************
+* HW3: Metro Simulator
+* Comp 15 Spring 2019 
+* README
+* Author: Lewis Bobrow
+*
+*********************************************************/
+
+Compile/run: Compile using "make MetroSim", run executable with
+"./MetroSim stationsFile passFile [commands]"
+
+Program Purpose: This homework assignment handles a running train
+to accomodate passengers arriving/departing a metro. Learn how to
+design and modularize code and work with documented libraries.
+
+Acknowledgements: None.
+
+Files: 
+main.cpp: STUDENT TO-DO: Main file should be short and handle 
+simple driver functions such as reading in files. 
+
+MetroSim.cpp: STUDENT TO-DO: Implementation of MetroSim class.
+Main functionality of running the Metro Simulation, should be
+able to move trains and deal with passengers going on/off the 
+train. 
+
+MetroSim.h: STUDENT TO-DO: Interface of MetroSim class.
+
+Station.cpp: Implementation of Station class. Allows for various
+functions related to accessing the information of the Station
+class and modifying passengers. 
+
+Station.h: Interface of Station class.
+
+stations.txt: an example file containing a list of stations.
+
+test_commands.txt: sample list of commands that you could give to
+the simulator
+
+Data Structures: I used vectors of structs in this assignment.
+I created a struct for the passenger or a struct for a station.
+The passenger struct contained information about its ID, 
+its departure station, its arrival station, a bool to check if the
+passenger is on the train, and a bool to check if the passenger 
+has completed its ride. The station struct contained information about its
+name and station number. I used vectors because the vector library has 
+built-in functions that could easily and remove passengers and stations to 
+the data structure.
+
+Testing: I had a lot of problems reading in the command-line arguments.
+Although the program would compile, the core would be dumped when it
+attempted to read in the test_commands.txt file. I fixed this by updating
+my conditional statements in main to reflect when the commands file should
+be read in. I also had a lot of trouble with being able to reverse the train.
+I figured this out by adding a boolean called isReverse that made the train
+go backwards if isReverse is true. isReverse gets flipped if the train 
+reaches the end of the tracks and isReverse is false, or if the train reaches
+the beginning of the tracks and isReverse is true. I tested the program 
+by using all of the possible commands manually, and by using the
+test_command.txt file in the command-line.
+
+Note: This homework comes partially implemented, but student must
+also create the driver and add class functionality.
